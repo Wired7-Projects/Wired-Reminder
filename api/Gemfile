@@ -1,0 +1,7 @@
+source 'http://rubygems.org'
+
+gem 'sinatra', '~> 2.0'
+gem 'redis', '~> 4.0', '>= 4.0.1'
+gem 'pony', '~> 1.11'
+gem 'sidekiq', '~> 5.0', '>= 5.0.5'
+gem 'passenger', '~> 5.0', '>= 5.0.30'

@@ -1,0 +1,25 @@
+version: "3.2"
+services:
+
+  redis:
+    image: redis:latest
+  
+  api:
+    build:
+      context: ./api
+    command: passenger start
+    ports:
+      - "3000:3000"
+    depends_on:
+      - redis
+    volumes:
+      - ./api:/api
+
+  sidekiq: 
+    build:
+      context: ./api
+    command: bundle exec sidekiq -r ./app/routes.rb
+    depends_on:
+      - redis
+    volumes:
+      - ./api:/api
