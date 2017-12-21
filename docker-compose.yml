@@ -23,3 +23,9 @@ services:
       - redis
     volumes:
       - ./api:/api
+    environment:
+      WIRED_REMINDER_MAIL_ADDRESS:
+      WIRED_REMINDER_MAIL_PORT:
+      WIRED_REMINDER_MAIL_USER:
+      WIRED_REMINDER_MAIL_PASSWORD:
+      WIRED_REMINDER_MAIL_DOMAIN:
